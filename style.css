@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dm{
+    z-index: 1;
+    float: right;
+    width: 100%;
+    max-width: 100%;
+    opacity: 0.8; /*透明度*/
+}
+
+nav{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    background-color: lightgrey;
+    margin:5px 0px auto;
+    height:50px;
+    width:100%;
+    font-size: 40px;
+    color:#242e3d;
+    text-align: center;
+    font-family: 'Marhey', cursive;
+    opacity: 0.8;
+}
+
+nav ul {
+    position: relative;
+    margin: 0px;
+}
+
+nav li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #0b2449;
+    opacity: 0.;
+}
+
+nav a:hover {
+    opacity: 0.8;
+    color: black;
+    background-color: rgb(172, 170, 170);
+    border-radius: 20%;
+}
+
+.word {
+    font-family: 'Kaisei HarunoUmi', serif;
+    color: black;
+}
+
+.titlew {
+    font-size: 30px;
+    color: #0b2449;
+}
+
+/*關於我*/
+
+.sc1 {
+    padding: 20px 5px;
+    margin: 20px 10px;
+    border-radius: 30px 10px;
+    background-color: rgb(196, 196, 201);
+    opacity: 2;
+}
+
+.intro00 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.intro01 {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    width: 300px;
+    height: 300px; 
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/*照片輪替*/
+.intro01 img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.intro01 img.active {
+    display: block;
+    opacity: 1;
+}
+
+.intro02 {
+    position: relative;
+    padding-left: 10px;
+    top: 5px;
+    font-size: 25px;
+}
+
+.ph1 {
+    display: flex;
+    right: 100px;
+    height: 200px;
+    weight: 200px;
+    border-radius: 100%;
+}
+
+/*技能*/
+.sk {
+    padding: 10px;
+    margin: 10px;
+}
+
+.skill{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+
+.column {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+/*SKILL*/
+.sc2 {
+    padding: 20px 5px;
+    margin: 20px 10px;
+    border-radius: 30px 10px;
+    background-color: rgb(196, 196, 201);
+    opacity: 2;
+    overflow: hidden;
+}
+
+progress {
+    width: 100%;
+    height: 50px;
+    animation: test;
+    font-size: 20px;
+    color: black;
+}
+
+/*經歷*/
+.sc3{
+    padding: 20px 5px;
+    margin: 20px 10px;
+    border-radius: 30px 10px;
+    background-color: rgb(196, 196, 201);
+    opacity: 2;
+    height: auto;
+}
+/*經歷下欄選單*/
+
+.tabs {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.tab-radio {
+    display: none;
+}
+
+.tab-label {
+    padding: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.tab-content {
+    order: 1;
+    display: none;
+    width: 100%;
+    height: auto;
+    /* flex: 1; */
+    padding: 10px;
+    /* flex-direction: column; */
+}
+
+.tab-radio:checked + .tab-label {
+    background-color: #ccc;
+}
+
+.tab-radio:checked + .tab-label + .tab-content {
+    display: initial;
+}
+
+/*社團*/
+.club{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ctimg {
+    flex: 1;
+    position: relative;
+    width: 250px;
+    height: 200px;
+    margin-right: 10px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+  
+  
+.cttext {
+    flex: 1;
+    max-width: 50%;
+    font-size: 25px;
+    position: relative;
+    z-index: 2;
+}
+  
+.club:hover .ctimg {
+    transform: scale(1.1);
+}
+
+/*工作*/
+.wkimg{
+    flex: 1;
+    position: relative;
+    max-width:20%;
+    margin-right: 10px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.work:hover .wkimg {
+    transform: scale(1.1);
+  }
+
+/*課程*/
+.sub {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sbimg-container {
+    text-align: center;
+}
+
+.sbimg {
+    max-width: 100%;
+    height: 180px;
+    width: 300px;
+}
+
+.image-text {
+    margin-top: 20px;
+}
+
+
+.sub:hover .sbimg {
+    transform: scale(1.1);
+}
+
+/*影片*/
+
+.sc3-1 {
+    padding: 20px 5px;
+    margin: 20px 10px;
+    border-radius: 10px 30px;
+    background-color: rgb(196, 196, 201);
+    opacity: 2;
+    position: relative;
+}
+
+.sc3-2 {
+    text-align: center;
+}
+
+.sc3-3-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sc3-4-wrapper {
+    max-width: 50%;
+    padding: 10px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+/*聯絡*/
+
+.sc4 {
+    padding: 20px 5px;
+    margin: 20px 10px;
+    border-radius: 10px 30px;
+    background-color: rgb(196, 196, 201);
+    opacity: 2;
+    position: relative;
+
+}
+
+.cn {
+    text-align: center;
+    font-size: 20px;
+}
+
+.icon {
+    margin: 10px;
+    padding: 10px auto;
+    height: 70px;
+    width: 70px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.icon:hover {
+    width: 90px;
+    height: 90px;
+}
+
+/*頁尾*/
+footer {
+    width: 100%;
+    height: 70px;
+    padding: 10px 10px;
+    background-color: lightgray;
+    text-align: center;
+    font-family: 'Marhey', cursive;
+}

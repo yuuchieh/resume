@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuchieh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../resume/img/drumlogo.png">
+
+    <script>
+        /*進度條*/
+        window.onload = function() {
+            move("file1", "schedule1", 60, "Python");
+            move("file2", "schedule2", 60, "Java");
+            move("file3", "schedule3", 50, "CSS"); 
+            move("file4", "schedule4", 90, "Drum");
+            move("file5", "schedule5", 75, "Piano");
+            move("file6", "schedule6", 60, "Martial arts");
+        };
+    
+        function move(fileId, scheduleId, targetValue, text) {
+            var file = document.getElementById(fileId);
+            var schedule = document.getElementById(scheduleId);
+            var value = 1;
+            var id = setInterval(frame, 40);
+            function frame() {
+                if (value >= targetValue) {
+                    clearInterval(id);
+                }
+                else {
+                    value++;
+                    file.value = value;
+                    schedule.innerHTML = text + " " + value + "%";
+                }}}
+        /*圖片變動*/
+        document.addEventListener('DOMContentLoaded', function() {
+        var introImgs = document.querySelectorAll('.intro01 img');
+        var interval = setInterval(changeImage, 1500); //每1.5秒換一次
+    
+        function changeImage() {
+            var activeImg = document.querySelector('.intro01 img.active');
+            var nextImg = activeImg.nextElementSibling || introImgs[0];
+            activeImg.classList.remove('active');
+            nextImg.classList.add('active');
+        }});
+    
+    </script>
+</head>
+<body background="img/bk.jpg">
+    <header>
+        <img src="../resume/img/title.jpg" alt="dmp" class="dm">
+    </header>
+
+    <nav>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marhey&display=swap" rel="stylesheet">
+        <ul>
+            <li style="left: -20%;"><a href="#aboutme">Myself</a></li>
+            <li style="left: -10%;"><a href="#skill">Skill</a></li>
+            <li style="left: 0%;"><a href="#experience">Experience</a></li>
+            <li style="left: 10%;"><a href="#video1">Video</a></li>
+            <li style="left: 20%;"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+<div class="word">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
+<!--關於我-->
+    <section class="sc1" id="aboutme">
+        <h2 class="titlew">About me</h2>
+        <div class="intro00">
+            <div class="intro01">
+                <img src="img/myself.jpg" alt="me" class="ph1">
+                <img src="img/me.jpg" alt="側" class="active">
+                <img src="img/mee.jpg" alt="愛心">
+                <img src="img/child.jpg" alt="小時候">
+                <img src="img/cake.jpg" alt="蛋糕">
+                <img src="img/cry.jpg" alt="哭">
+                <img src="img/kb.jpg" alt="kb">
+                <img src="img/dd.jpg" alt="drm">
+                <img src="img/friend.jpg" alt="friend">
+                <img src="img/high.jpg" alt="high">
+                <img src="img/um.jpg" alt="ummm">
+                <img src="img/fire.jpg" alt="fire">
+            </div>
+            <p class="intro02">
+                姓名：張伃倢<br>
+                生日：2002/9/21<br>
+                星座：處女座<br>
+                興趣：爵士鼓演奏<br>
+                台南人，沒有很甜<br>
+                我是一個很慢熟的人，通常要好幾個月後話才會比較多。<br>
+                也是一個沒有鏡頭、常常放槍的鼓手<br>
+                看起來很難相處，實際上也是<br>
+                然後我超會哭的，但數123我就可以停下來了<br>
+                認識我的人都覺得我很荒謬<br>                
+            </p>
+        </div>
+    </section>
+
+<!--技能-->
+    <section class="sc2" id="skill">
+        <h2 class="titlew">Skill</h2>
+        <div class="column">
+            <p style="font-weight:bold; font-size:30px;">程式技能</p>
+            <ul class="sk">
+                <li>
+                    <div class="array_item">
+                        <progress id="file1" max="100" value="1"></progress>
+                        <p id="schedule1">Python 1%</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="array_item">
+                        <progress id="file2" max="100" value="1"></progress>
+                        <p id="schedule2">Java 1%</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="array_item">
+                        <progress id="file3" max="100" value="1"></progress>
+                        <p id="schedule3">HTML 1%</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <p style="font-weight:bold; font-size:30px;">其他技能</p>
+            <ul class="sk">
+                <li>
+                    <div class="array_item">
+                        <progress id="file4" max="100" value="1"></progress>
+                        <p id="schedule4">Drum 1%</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="array_item">
+                        <progress id="file5" max="100" value="1"></progress>
+                        <p id="schedule5">Piano 1%</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="array_item">
+                        <progress id="file6" max="100" value="1"></progress>
+                        <p id="schedule6">Martial arts 1%</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+<!--經歷-->
+<section class="sc3" id="experience">
+    <h2 class="tw">Experience</h2>
+    <div class="tabs">
+    <!--社團-->    
+        <input type="radio" name="tab" id="tab1" class="tab-radio" checked>
+        <label for="tab1" class="tab-label">社團經歷</label>
+        <div class="tab-content">
+            <h2>社團經歷</h2>
+            <div class="club">
+            <img src="img/ph2.jpg" alt="音法" class="ctimg">
+            <div class="yt-link">
+            <a href="https://youtu.be/gSPdsMxCINc" target="_blank">
+            <img src="img/ph3.jpg" alt="畢業歌" class="ctimg"></a></div>
+            <img src="img/ph4.jpg" alt="學弟妹" class="ctimg">
+            <div>
+                <p class="cttext">高中—熱音社社長</p>
+                <p class="cttext">曾擔任：</p>
+                <p class="cttext"> 7th音法聯軍、5th琴鳴–活動總召</p>
+                <p class="cctext">這對我來說是很豐富的經驗</p>
+                <p class="cctext">一開始與他校不熟識到最後承辦好多場成果發表</p>
+                <p class="cctext">從中學到了很多待人處事以及隨機應變的能力</p>
+                <p class="cctext">也認識到各式各樣的好朋友一起玩樂團，在高中這段期間我過得很快樂～</p>
+            </div>
+            </div>
+        </div>
+          
+    <!--工作-->    
+        <input type="radio" name="tab" id="tab2" class="tab-radio">
+        <label for="tab2" class="tab-label">工作</label>
+        <div class="tab-content">
+            <h2>工作</h2>
+            <div class="work">
+                <img src="img/wk.jpg" alt="吉他" class="wkimg">
+                <img src="img/wk2.jpg" alt="換弦" class="wkimg">
+                <img src="img/wk3.jpg" alt="商品照" class="wkimg">
+                <div>
+                <p class="cctext">貳館音樂 2021/4~2023/9</p>
+                <p class="cttext">因為自己本身很喜歡音樂相關內容</p>
+                <p class="cttext">所以就選擇到樂器行工作</p>
+                <p class="cctext">工作內容：櫃檯收銀、協助樂器保養、接洽老師學生</p>
+                <p class="cctext">在這份工作中，我也對自己擅長的樂器更加熟悉</p>
+                <p class="cctext">無論是原理或是組成都有更深一層的了解</p>
+                <p class="cctext">也知道了服務業的不易，也透過老師對於音樂這方面的知識增加了許多～！</p>
+
+                </div>
+
+            </div>
+        </div>
+
+    <!--課程專題-->    
+        <input type="radio" name="tab" id="tab3" class="tab-radio">
+        <label for="tab3" class="tab-label">課程專題</label>
+        <div class="tab-content">
+          <h2>課程專題</h2>
+          <div class="sub">
+            <div class="sbimg-container">
+                <img src="img/pokemon.png" alt="網程" class="sbimg">
+                <p class="image-text">網路程式設計–Pokemon</p>
+              </div>
+              <div class="sbimg-container">
+                <img src="img/Qkie.png" alt="企概" class="sbimg">
+                <p class="image-text">企業概論–Qkie</p>
+              </div>
+              <div class="sbimg-container">
+                <img src="img/Python.png" alt="拍森" class="sbimg">
+                <p class="image-text">Python–Pac-man</p>
+              </div>
+              
+          </div>
+        </div>
+    </div>
+    </section>
+<!--影片-->
+    <section class="sc3-1" id="video1">
+    <h2 class="sc3-2">表演的片段！</h2>
+        <div class="sc3-3-container">
+            <div class="sc3-4-wrapper">
+                <video src="video/孫小美.mp4" controls></video>
+            </div>
+            <div class="sc3-4-wrapper">
+                <video src="video/Hello.mp4" controls></video>
+            </div>
+        </div>
+    </section>
+
+<!--聯絡-->
+    <section class="sc4" id="contact">
+        <p class="cn">~~~~~有問題歡迎聯繫我~~~~~</p>
+        <div class="icon-container" >
+            <a href="https://www.facebook.com/yuchieh.921?mibextid=LQQJ4d" target="_blank"><img class="icon" src="img/fb2.png" alt="FB"></a>
+            <a href="https://instagram.com/uyyyc__?igshid=YmMyMTA2M2Y=" target="_blank"><img class="icon"  src="img/ig2.png" alt="IG"></a>
+            <a href="mailto:yuc921@gmail.com"><img class="icon" src="img/mail2.png" alt="mail"></a>
+        </div>   
+    </section>
+</div>
+
+<!--頁尾-->
+<footer>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marhey&display=swap" rel="stylesheet">
+    <p>Copyright©YUCHIEH<br>All rights reserved</p>
+    </footer>
+</body>
+</html>
